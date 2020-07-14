@@ -1,0 +1,28 @@
+using System;
+					
+public class Program
+{
+	public static void Main()
+	{
+		// Entrada del usuario de la variable X1
+		Console.Write("Ingrese y: ");
+		double y = double.Parse(Console.ReadLine());
+		
+		// Entrada del usuario de la variable Y1
+		Console.Write("Ingrese z: ");
+		double z = double.Parse(Console.ReadLine());
+		
+		// Entrada del usuario de las variables restantes
+		// ...
+		double a = Math.Atan(y/z);
+		double A = a * (180.0/Math.PI);
+		
+		double t = y/Math.Sin(a);
+		
+		double c = 90-A;
+		
+		Console.Write("a: " + A);
+		Console.Write("t " + t);
+		Console.Write("c : " + c);
+	}
+}

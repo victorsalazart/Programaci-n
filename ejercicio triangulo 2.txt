@@ -1,0 +1,29 @@
+using System;
+					
+public class Program
+{
+	public static void Main()
+	{
+		// Entrada del usuario de la variable t
+		Console.Write("Ingrese t: ");
+		double t2 = double.Parse(Console.ReadLine());
+		
+		// Entrada del usuario de la variable a
+		Console.Write("Ingrese a: ");
+		double a2 = double.Parse(Console.ReadLine());
+		
+		double a2Rad = a2 * Math.PI/180;
+		// Entrada del usuario de las variables restantes
+		// ...
+		double y2 = Math.Sin(a2Rad) * t2;
+		
+		double z2 = Math.Cos(a2Rad) * t2;
+		
+		double c2 = 90-a2;
+		
+		
+		Console.Write("y: " + y2);
+		Console.Write("z " + z2);
+		Console.Write("c : " + c2);
+	}
+}
