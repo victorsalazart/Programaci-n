@@ -1,0 +1,52 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace Triangulos_1_4
+{
+    class Program
+    {
+        static void Main()
+        {
+            Console.Write("Ingrese valor de b:");
+            double b2 = double.Parse(Console.ReadLine());
+            double b2Rad = b2 * Math.PI / 180;
+
+
+            Console.Write("Ingrese valor de z:");
+            double z2 = double.Parse(Console.ReadLine());
+            
+
+            Console.Write("Ingrese valor de y:");
+            double y2 = double.Parse(Console.ReadLine());
+
+
+            //Ecuaciones
+
+            double a = Math.Atan(y2 / z2);
+            double A = a * (180 / Math.PI);
+
+            double t = y2 / Math.Sin(a);
+
+            double c = 90 - A;
+
+            double e = 180 -c;
+
+            double d = 180 - (e + b2);
+            double dRad = d * Math.PI / 180;
+
+            double x1 = t * Math.Sin(b2Rad);
+            double x2 = Math.Sin(dRad);
+
+            double x = (x1 / x2);
+
+            Console.Write("x: " + x);
+
+
+
+
+        }
+    }
+}

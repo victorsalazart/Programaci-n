@@ -1,0 +1,43 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace triangulo_2_4
+{
+    class Program
+    {
+        public static void Main()
+        {
+            Console.Write("Ingrese d:  ");
+            double d2 = double.Parse(Console.ReadLine());
+            double d2Rad = d2 * Math.PI / 180;
+
+
+            Console.Write("Ingrese b:  ");
+            double b2 = double.Parse(Console.ReadLine());
+            double b2Rad = b2 * Math.PI / 180; 
+
+            Console.Write("Ingrese y:  ");
+            double y2 = double.Parse(Console.ReadLine());
+
+            //Ecuaciones
+
+            double e = 180 - (d2 + b2);
+            double eRad = e * Math.PI / 180;
+
+            double c = 180 - e;
+            double cRad = c * Math.PI / 180;
+
+            double a = 90 - c;
+            double aRad = a * Math.PI / 180;
+
+            double t = y2 / Math.Sin(aRad);
+
+            double z = Math.Sqrt((t * t) - (y2 * y2));
+
+            Console.Write("z: " + z);
+        }
+    }
+}

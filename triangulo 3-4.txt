@@ -1,0 +1,55 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace triangulo_3_4
+{
+    class Program
+    {
+        public static void Main()
+        {
+            Console.Write("Ingrese el valor de w: ");
+            double w2 = double.Parse(Console.ReadLine());
+
+            Console.Write("Ingrese el valor de d: ");
+            double d2 = double.Parse(Console.ReadLine());
+            
+            double d2Rad = d2 * Math.PI / 180;
+
+            Console.Write("Ingrese el valor de x: ");
+            double x2 = double.Parse(Console.ReadLine());
+
+
+            //ecuaciones
+
+            double t = (x2 * x2) + (w2 * w2) - 2 * x2 * w2 * Math.Cos(d2Rad);
+
+            double t2 = Math.Sqrt(t);
+
+            double b1 = Math.Sin(d2Rad) * x2;
+
+            double b2 = b1 / t2;
+
+            double b = Math.Asin(b2);
+
+            double bGrados = b * (180 / Math.PI);
+
+            double e = 180 - (bGrados + d2);
+
+            double c = 180 - e;
+            double cRad = c * Math.PI / 180;
+
+            double a = 90 - c;
+            double aRad = a * Math.PI / 180;
+
+            double y2 = Math.Sin(aRad) * t2;
+
+            double z2 = Math.Cos(aRad) * t2;
+
+
+            Console.Write("y: " + y2);
+        }
+    }
+}
