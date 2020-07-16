@@ -1,0 +1,37 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace IndiceMasaCorporal
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            float estatura, peso, imc;
+
+            Console.Write("Ingrese su peso en KG :  ");
+            peso = float.Parse(Console.ReadLine());
+
+            Console.Write("Ingrese su estatura en CM : ");
+             estatura = float.Parse(Console.ReadLine());
+
+            //formula para calcular el imc
+            
+                imc = peso / ((estatura / 100) * (estatura / 100));
+                Console.Write(" Su indice de masa corporal es : " + imc);
+         
+
+                if (imc < 18.49)
+                    Console.Write(" Bajo de peso ");
+                else if (imc < 24.99)
+                    Console.Write(" Peso normal ");
+                else if (imc < 29.99)
+                    Console.Write(" Sobre peso ");
+                else if (imc < 34.99)
+                    Console.Write(" Obesidad ");
+        }
+    }
+}
