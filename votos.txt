@@ -1,0 +1,44 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace VOTOSS
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            //entrada
+            Console.Write("Ingrese:\nVotos por a:\nVotos por b:\nVotos en blanco:\nVotos anulados:\nNúmero total de la población:\nPorcentaje de la población que es mayor de edad, Ingrese el valor sin  %:\n");
+          
+            int a = int.Parse(Console.ReadLine()), b = int.Parse(Console.ReadLine()), VotosBlancos = int.Parse(Console.ReadLine()), anulados = int.Parse(Console.ReadLine()), Poblacion = int.Parse(Console.ReadLine());
+            double p = double.Parse(Console.ReadLine());
+            int mayoresDeEdad = (int)(p * 0.01 * Poblacion), totalVotantes = a + b + VotosBlancos + anulados;
+            int abstencion = mayoresDeEdad - totalVotantes;
+           
+
+            bool ganoA = a > b && a > VotosBlancos;
+            bool ganoB = b > a && b > VotosBlancos;
+             
+
+            //salida
+            Console.Write("Personas Mayores de edad:" + mayoresDeEdad);
+
+            Console.Write("\tTotal de votantes: " + totalVotantes);
+
+            Console.Write("\tNo votaron:" + abstencion);
+
+
+            if ((anulados < ((a + b) * 0.30) || (a + b) > VotosBlancos) && abstencion < totalVotantes)
+            {
+                Console.WriteLine("\nLas votaciones tuvieron exito");
+                if (ganoA) Console.Write("El ganador es el Partido de la U\n");
+                if (ganoB) Console.Write("El ganador es el Partido Verde\n");
+            }
+            else Console.Write("Las votaciones deben repetirse\n");
+
+        }
+    }
+}
