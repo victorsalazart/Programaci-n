@@ -1,0 +1,50 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace Edad
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            int total = 0;
+            int i = 0;
+            Console.Write("Ingrese n cantidad de datos: ");
+            int n = int.Parse(Console.ReadLine());
+            int max = 0;
+            int min = 200;
+            string nombreMax = "", nombreMin = "";
+
+            while (i < n)
+            {
+                Console.Write("Ingrese su nombre: ");
+                string nombre = Console.ReadLine().ToString();
+                Console.Write("Ingrese su edad: ");
+                int edad = int.Parse(Console.ReadLine());
+               
+                if (edad > max)
+                {
+                    max = edad;
+                    nombreMax = nombre;
+                }
+                if (edad < min)
+                {
+                    min = edad;
+                    nombreMin = nombre;
+                }
+                total += edad;
+                i++;
+            }
+            double promedio = (double) total / n;
+
+            Console.WriteLine("Promedio = " + promedio);
+            Console.WriteLine("Mayor = " + max + " años ");
+            Console.WriteLine("Menor = " + min + " años ");
+            Console.WriteLine("El mayor es = " + nombreMax + " con " + max + " años ");
+            Console.WriteLine("El menor es = " + nombreMin + " con " + min + " años ");
+        }
+    }
+}
