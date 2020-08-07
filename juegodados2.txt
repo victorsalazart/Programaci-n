@@ -1,0 +1,73 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace ConsoleApp15
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            Random aleatorio = new Random();
+            bool gameover = false;
+            int t = 0, dado1 = 0, total = 0, d = 2;
+
+            Console.WriteLine("los 3 primeros turnos son libres, a partir del 4 turno si sacas un impar, pierdes");
+
+                while (100 > total && gameover != true)
+                {
+                    Console.WriteLine(" ¿Seguir jugando? ");
+                    string si = Console.ReadLine();
+
+                    if (si == "s")
+                    {
+                        dado1 = aleatorio.Next(1, 13);
+                        total += dado1;
+                        t++;
+                        Console.WriteLine("dado 1 : " + dado1);
+                        Console.WriteLine("total : " + total);
+
+
+
+                        if ((dado1 == 1 || dado1 == 3 || dado1 == 5 || dado1 == 7 || dado1 == 9 || dado1 == 11) && t > 3)
+                        {
+                            Console.WriteLine("Perdiste por sacar número impar");
+                            gameover = true;
+                            
+                        }
+                        if (dado1 == 12)
+                        {
+                            d--;
+                            Console.WriteLine("si sacas un 10, ganas");
+                        }
+                        
+                        else if(dado1 == 10 && d==1)
+                        {
+                            gameover = true;
+                            Console.WriteLine("ganaste");
+                        }
+
+                    }
+
+                    else if (si == "n")
+                    {
+                        Console.WriteLine("perdiste");
+                        gameover = true;
+
+                    }
+
+                }
+            if (total >= 100)
+            {
+                Console.WriteLine("ganaste");
+            }
+
+
+
+            Console.WriteLine("total : " + total);
+
+        }
+    }
+}
