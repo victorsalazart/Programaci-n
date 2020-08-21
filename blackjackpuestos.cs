@@ -20,7 +20,6 @@ public class Program
 		{
 			Console.WriteLine("Error, mínimo 2 jugadores y máximo 5; ");
 			n = int.Parse(Console.ReadLine());
-
 		}
 
 		string[] players = new string[n];
@@ -38,7 +37,6 @@ public class Program
 			string nombre = Console.ReadLine();
 			players[jugadores] = nombre;
 
-
 			carta1 = aleatorio.Next(1, 10);
 			carta2 = aleatorio.Next(1, 10);
 			Console.WriteLine("Carta 1 = " + carta1);
@@ -47,9 +45,7 @@ public class Program
 			Console.WriteLine("Total = " + total);
 
 			Console.Write("Desea tomar otra carta? (s/n): ");
-			continuar = Console.ReadLine();
-
-			
+			continuar = Console.ReadLine();		
 
 			if (total > maximo && total <= 21)
 			{
@@ -82,10 +78,7 @@ public class Program
 				{
 					maximo = total;
 					ganador = jugadores;
-				}
-
-				
-
+				}			
 			}
 
 			puntajes[jugadores] = total;
@@ -94,10 +87,8 @@ public class Program
 
 		for (int c = 0; c < players.Length; c++)
 		{
-
 			for (int j = 0; j < players.Length; j++)
 			{
-
 				for (int i = 0; i < players.Length - 1; i++)
 				{
 					if (puntajes[i] > puntajes[i + 1])
@@ -110,18 +101,10 @@ public class Program
 						players[i] = players[i + 1];
 						players[i + 1] = tmp2;
 					}
-
 				}
-
-
 			}
-
-
 		}
-
-
 		Console.WriteLine("El ganador fue " + players[n-1] + " con " + puntajes[n-1] + " puntos");
 		Console.WriteLine("El segundo lugar fue " + players[n - 2] + " con " + puntajes[n - 2] + " puntos");
-		Console.WriteLine("Gracias por jugar.");
 	}
 }
